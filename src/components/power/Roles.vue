@@ -227,7 +227,17 @@
             this.$refs.editFormRef.resetFields()
             },
             // 根据ID删除角色
+            
             async removeRolesById(id){
+                const result= await this.$confirm('此操作将永久删除该用户, 是否继续?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).catch(err=>err)
+                    console.log(result);
+                    if(result!=='confirm'){
+                        return this.$message.info('已取消删除')
+                    }
                 const {data:res}= await this.$http.delete('roles/'+id)
                 // console.log(res);
                 if(res.meta.status!==200) {

@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- 面包屑导航模块 -->
-       <el-breadcrumb separator-class="el-icon-arrow-right">
+        <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
         <el-breadcrumb-item>用户管理</el-breadcrumb-item>
         <el-breadcrumb-item>用户列表</el-breadcrumb-item>
@@ -250,7 +250,7 @@ export default {
             // 参数为点击修改按钮的用户的id
             console.log(id);
             // 根据id发送ajax请求获取用户数据
-            const {data:res}=await this.$http.get('users//'+id)
+            const {data:res}=await this.$http.get('users/'+id)
             // console.log(res);
             if(res.meta.status!==200) {
                return this.$message.error('获取用户信息失败')

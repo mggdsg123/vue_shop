@@ -17,3 +17,7 @@ body,
     margin-top: 15px;
     font-size: 12px;
 }
+
+.el-cascader-menu__list {
+    height: 200px;
+}
